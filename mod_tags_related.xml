@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+	<name>mod_tags_related</name>
+	<author>Joomla! Project</author>
+	<creationDate>January 2013</creationDate>
+	<copyright>Copyright (C) 2005 - 2018 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>admin@joomla.org</authorEmail>
+	<authorUrl>www.joomla.org</authorUrl>
+	<version>3.1.0</version>
+	<description>MOD_TAGS_RELATED_XML_DESCRIPTION</description>
+	<files>
+		<filename module="mod_tags_related">mod_tags_related.php</filename>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.mod_tags_related.ini</language>
+		<language tag="en-GB">en-GB.mod_tags_related.sys.ini</language>
+		<language tag="sl-SI">sl-SI.mod_tags_related.ini</language>
+		<language tag="sl-SI">sl-SI.mod_tags_related.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field 
+					name="category" 
+					type="category" 
+					extension="com_content" 
+					label="Select a category" 
+					description="Show items only from selected categories"
+					multiple="reue"
+				/>
+
+				<field
+					name="maximum"
+					type="integer"
+					label="MOD_TAGS_RELATED_MAX_LABEL"
+					description="MOD_TAGS_RELATED_MAX_DESC"
+					default="5"
+					first="1"
+					last="20"
+					step="1"
+				/>
+
+				<field
+					name="matchtype"
+					type="list"
+					label="MOD_TAGS_RELATED_FIELD_MATCHTYPE_LABEL"
+					description="MOD_TAGS_RELATED_FIELD_MATCHTYPE_DESC"
+					default="any"
+					>
+					<option value="all">MOD_TAGS_RELATED_FIELD_ALL</option>
+					<option value="any">MOD_TAGS_RELATED_FIELD_ONE</option>
+					<option value="half">MOD_TAGS_RELATED_FIELD_HALF</option>
+				</field>
+
+				<field
+					name="ordering"
+					type="list"
+					label="MOD_TAGS_RELATED_FIELD_ORDERING_LABEL"
+					description="MOD_TAGS_RELATED_FIELD_ORDERING_DESC"
+					default="count"
+					>
+					<option value="count">MOD_TAGS_RELATED_FIELD_ORDERING_COUNT</option>
+					<option value="random">MOD_TAGS_RELATED_FIELD_ORDERING_RANDOM</option>
+					<option value="countrandom">MOD_TAGS_RELATED_FIELD_ORDERING_COUNT_AND_RANDOM</option>
+					<option value="published_asc">MOD_TAGS_RELATED_FIELD_ORDERING_DATE_PUBLISHED_ASC</option>
+					<option value="published_desc">MOD_TAGS_RELATED_FIELD_ORDERING_DATE_PUBLISHED_DESC</option>
+					<option value="created_asc">MOD_TAGS_RELATED_FIELD_ORDERING_DATE_CREATED_ASC</option>
+					<option value="created_desc">MOD_TAGS_RELATED_FIELD_ORDERING_DATE_CREATED_DESC</option>
+				</field>
+
+				<field
+					name="image_intro"
+					type="radio"
+					label="MOD_TAGS_RELATED_FIELD_IMAGE_INTRO_LABEL"
+					description="MOD_TAGS_RELATED_FIELD_IMAGE_INTRO_DESC"
+					default="0"
+					class="btn-group btn-group-yesno"
+					>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field
+					name="image_full"
+					type="radio"
+					label="MOD_TAGS_RELATED_FIELD_IMAGE_FULL_LABEL"
+					description="MOD_TAGS_RELATED_FIELD_IMAGE_FULL_DESC"
+					default="0"
+					class="btn-group btn-group-yesno"
+					>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field
+					name="created_date"
+					type="radio"
+					label="MOD_TAGS_RELATED_FIELD_IMAGE_DATE_CREATED_LABEL"
+					description="MOD_TAGS_RELATED_FIELD_IMAGE_DATE_CREATED_DESC"
+					default="0"
+					class="btn-group btn-group-yesno"
+					>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field
+					name="published_date"
+					type="radio"
+					label="MOD_TAGS_RELATED_FIELD_IMAGE_DATE_PUBLISHED_LABEL"
+					description="MOD_TAGS_RELATED_FIELD_IMAGE_DATE_PUBLISHED_DESC"
+					default="0"
+					class="btn-group btn-group-yesno"
+					>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+				/>
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+					rows="3"
+				/>
+
+				<field
+					name="owncache"
+					type="list"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC"
+					default="1"
+					>
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="number"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC"
+					default="900"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
